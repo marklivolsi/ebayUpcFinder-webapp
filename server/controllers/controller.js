@@ -1,7 +1,7 @@
-const urlBuilder = require('../utilities/urlbuilder');
-const requests = require('../utilities/requests');
-const parser = require('../utilities/parser');
-const validator = require('../utilities/validator');
+const urlBuilder = require('../helpers/urlbuilder');
+const requests = require('../helpers/requests');
+const parser = require('../helpers/parser');
+const validator = require('../helpers/validator');
 
 exports.getItemList = async function (req, res) {
     const upc = req.params.upc;
