@@ -1,0 +1,19 @@
+form {
+  margin-top: 50px;
+}
+
+#search-container {
+  margin: auto;
+}
+
+#searchbar {
+  text-align: center;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+  height: 60px;
+}
+
+#searchbar:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

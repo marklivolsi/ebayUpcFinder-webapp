@@ -2,16 +2,45 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {HttpClientModule} from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {TableViewComponent} from './table-view/table-view.component';
+import { BigSearchComponent } from './big-search/big-search.component';
+
+const appRoutes: Routes = [
+  {
+    path: 'upc/:upc',
+    component: TableViewComponent
+  }, {
+    path: 'id/:id',
+    component: ItemDetailComponent
+  }, {
+    path: '',
+    component: AppComponent,
+    pathMatch: 'full'
+  }, {
+    path: '**',
+    component: PageNotFoundComponent
+  }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TableViewComponent,
+    ItemDetailComponent,
+    PageNotFoundComponent,
+    BigSearchComponent
   ],
   imports: [
     BrowserModule,
-    AngularFontAwesomeModule
+    HttpClientModule,
+    AngularFontAwesomeModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
