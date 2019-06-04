@@ -21,9 +21,16 @@ export class DataService {
     const url = this.serverUrl + '/upc/' + this.upc;
     console.log('Fetching: ' + url);
     try {
-      await this.http.get<any>(url).toPromise().then(res => this.itemListings = res);
+      await this.http.get<any>(url).toPromise().then(res => {
+        if (res === null) {
+          throw new Error('ERROR: Null response. Check the provided UPC code is valid.');
+        } else {
+          this.itemListings = res;
+        }
+      });
     } catch (err) {
       console.error(err);
+      console.log('Will route to error handler...');
       // route to appropriate component
     }
   }
