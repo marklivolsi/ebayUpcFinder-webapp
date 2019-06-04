@@ -1,27 +1,28 @@
-<div class="table-responsive">
-  <table class="table table-sm">
-    <thead class="thead-dark">
-    <tr>
-      <th *ngFor="let col of columnNames">
-        {{col}}
-      </th>
-    </tr>
-    <tr *ngFor="let item of items; let i = index;" [ngClass]="{
-          'green' : item.sellingState === 'EndedWithSales',
-          'red' : item.sellingState === 'EndedWithoutSales'
-        }">
-      <td>{{ i + 1 }}</td>
-      <td>{{ item.itemId }}</td>
-      <td>{{ item.title }}</td>
-      <td>{{ formatStringAsCurrency(item.salePrice) }}</td>
-      <td>{{ formatStringAsCurrency(item.shippingPrice) }}</td>
-      <td>{{ formatStringAsCurrency(getTotalPrice(item)) }}</td>
-      <td [ngClass]="{
-          'sell-status-green' : item.sellingState === 'EndedWithSales',
-          'sell-status-red' : item.sellingState === 'EndedWithoutSales'
-        }">{{ formatSaleStatus(item.sellingState) }}</td>
-      <td><button type="button" class="btn btn-secondary btn-sm">view description</button></td>
-    </tr>
-    </thead>
-  </table>
-</div>
+<!--<div class="table-responsive">-->
+  <!--<table class="table table-sm">-->
+    <!--<thead class="thead-dark">-->
+    <!--<tr>-->
+      <!--<th *ngFor="let col of columnNames">-->
+        <!--{{col}}-->
+      <!--</th>-->
+    <!--</tr>-->
+    <!--<tr *ngFor="let item of items; let i = index;" [ngClass]="{-->
+          <!--'green' : item.sellingState === 'EndedWithSales',-->
+          <!--'red' : item.sellingState === 'EndedWithoutSales'-->
+        <!--}">-->
+      <!--<td>{{ i + 1 }}</td>-->
+      <!--<td>{{ item.itemId }}</td>-->
+      <!--<td>{{ item.title }}</td>-->
+      <!--<td>{{ formatStringAsCurrency(item.salePrice) }}</td>-->
+      <!--<td>{{ formatStringAsCurrency(item.shippingPrice) }}</td>-->
+      <!--<td>{{ formatStringAsCurrency(getTotalPrice(item)) }}</td>-->
+      <!--<td [ngClass]="{-->
+          <!--'sell-status-green' : item.sellingState === 'EndedWithSales',-->
+          <!--'sell-status-red' : item.sellingState === 'EndedWithoutSales'-->
+        <!--}">{{ formatSaleStatus(item.sellingState) }}</td>-->
+      <!--<td><button type="button" class="btn btn-secondary btn-sm">view description</button></td>-->
+    <!--</tr>-->
+    <!--</thead>-->
+  <!--</table>-->
+<!--</div>-->
+<p>table view works!</p>
