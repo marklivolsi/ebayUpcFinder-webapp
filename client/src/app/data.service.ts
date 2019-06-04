@@ -9,6 +9,9 @@ export class DataService {
   private itemListings;
   private upc: string;
 
+  constructor(private http: HttpClient) {
+  }
+
   getUpc(): string {
     return this.upc;
   }
@@ -38,8 +41,4 @@ export class DataService {
   getItemListings() {
     return this.itemListings;
   }
-
-  constructor(private http: HttpClient) {
-  }
-
 }

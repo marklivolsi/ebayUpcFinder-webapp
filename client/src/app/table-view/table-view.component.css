@@ -1,6 +1,7 @@
 table {
   font-size: 0.85em;
   font-family: "Times New Roman", Times, serif;
+  margin-top: 30px;
 }
 
 td, th {
@@ -9,4 +10,27 @@ td, th {
 
 th {
   font-weight: lighter;
+}
+
+tr:hover {
+  background-color: #F7F9F9;
+  cursor: pointer;
+}
+
+.green {
+  background-color: #eeffed;
+}
+
+.red {
+  background-color: #ffeded;
+}
+
+.sell-status-red {
+  color: red;
+  font-weight: bold;
+}
+
+.sell-status-green {
+  color: green;
+  font-weight: bold;
 }

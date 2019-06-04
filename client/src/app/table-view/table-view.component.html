@@ -7,23 +7,24 @@
       </th>
     </tr>
     </thead>
-    <!--<tr *ngFor="let item of items; let i = index;" [ngClass]="{-->
-          <!--'green' : item.sellingState === 'EndedWithSales',-->
-          <!--'red' : item.sellingState === 'EndedWithoutSales'-->
-        <!--}">-->
-      <!--<td>{{ i + 1 }}</td>-->
-      <!--<td>{{ item.itemId }}</td>-->
-      <!--<td>{{ item.title }}</td>-->
-      <!--<td>{{ formatStringAsCurrency(item.salePrice) }}</td>-->
-      <!--<td>{{ formatStringAsCurrency(item.shippingPrice) }}</td>-->
-      <!--<td>{{ formatStringAsCurrency(getTotalPrice(item)) }}</td>-->
-      <!--<td [ngClass]="{-->
-          <!--'sell-status-green' : item.sellingState === 'EndedWithSales',-->
-          <!--'sell-status-red' : item.sellingState === 'EndedWithoutSales'-->
-        <!--}">{{ formatSaleStatus(item.sellingState) }}</td>-->
-      <!--<td><button type="button" class="btn btn-secondary btn-sm">view description</button></td>-->
+    <tr *ngFor="let item of items; let i = index;" [ngClass]="{
+        'green' : item.getSellingState() === 'EndedWithSales',
+        'red' : item.getSellingState() === 'EndedWithoutSales'
+      }">
+      <!--Item number-->
+      <td>{{ i + 1 }}</td>
+      <!--Item Id-->
+      <td> {{ item.getItemId() }}  </td>
+      <!--&lt;!&ndash;Title&ndash;&gt;-->
+      <td> {{ item.getTitle() }}</td>
+      <!--Sale price-->
+      <td> ${{ item.getSalePrice() }} </td>
+      <!--Ship price-->
+      <td> ${{ item.getShipPrice() }} </td>
+      <!--&lt;!&ndash;&lt;!&ndash;Total price&ndash;&gt;&ndash;&gt;-->
+      <!--&lt;!&ndash;<td> {{ getTotalPrice(item) }} </td>&ndash;&gt;-->
     <!--</tr>-->
-    <!--</thead>-->
+
   </table>
 </div>
 <!--<p>table view works!</p>-->
