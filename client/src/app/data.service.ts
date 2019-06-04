@@ -20,8 +20,12 @@ export class DataService {
   async fetchItemListings() {
     const url = this.serverUrl + '/upc/' + this.upc;
     console.log('Fetching: ' + url);
-    await this.http.get<any>(url).toPromise().then(res => this.itemListings = res);
-    console.log('Itemlistings: ' + this.itemListings);
+    try {
+      await this.http.get<any>(url).toPromise().then(res => this.itemListings = res);
+    } catch (err) {
+      console.error(err);
+      // route to appropriate component
+    }
   }
 
   getItemListings() {
@@ -30,10 +34,5 @@ export class DataService {
 
   constructor(private http: HttpClient) {
   }
-
-
-  // async getItemListings(upc: string) {
-  //   // const
-  // }
 
 }

@@ -1,0 +1,12 @@
+table {
+  font-size: 0.85em;
+  font-family: "Times New Roman", Times, serif;
+}
+
+td, th {
+  padding: 10px;
+}
+
+th {
+  font-weight: lighter;
+}

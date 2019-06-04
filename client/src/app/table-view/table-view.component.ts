@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-table-view',
@@ -24,19 +25,20 @@ export class TableViewComponent implements OnInit {
     // 'End Time'
   ];
 
-  constructor(private dataService: DataService, private router: Router) { }
+  constructor(private dataService: DataService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   async fetchListings() {
-    // await this.dataService.fetchItemListings();
-    // handle empty / errors
+    await this.dataService.fetchItemListings();
     this.items = this.dataService.getItemListings();
+    console.log(`Fetched item listings for UPC code ${this.dataService.getUpc()}: `);
     console.log(this.items);
   }
 
   ngOnInit() {
-    // this.fetchListings();
-    console.log(this.columnNames);
-    console.log('UPC is: ' + this.dataService.getUpc());
+    this.activatedRoute.params.subscribe( (res) => {
+      this.dataService.setUpc(res.upc);
+      this.fetchListings();
+    });
   }
 
 }

@@ -36,7 +36,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     AngularFontAwesomeModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    RouterModule.forRoot(appRoutes, {enableTracing: false})
   ],
   providers: [],
   bootstrap: [AppComponent]

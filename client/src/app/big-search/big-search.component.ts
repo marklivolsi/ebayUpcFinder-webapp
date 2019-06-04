@@ -12,10 +12,15 @@ export class BigSearchComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router) { }
 
   onEnter(url, upc) {
-    this.dataService.setUpc((document.getElementById('searchbar') as HTMLInputElement).value);
-    console.log(this.dataService.getUpc());
-    this.dataService.fetchItemListings();
+    if (this.isValidUpc(upc)) {
     this.router.navigate([url, upc]);
+  } else {
+      alert('Please enter a valid UPC code.');
+    }
+}
+
+  isValidUpc(upc) {
+    return /\d{12,13}/.test(upc);
   }
 
   ngOnInit() {
