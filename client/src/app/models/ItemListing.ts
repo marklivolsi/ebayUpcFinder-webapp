@@ -1,6 +1,5 @@
 import * as stringutils from '../helpers/stringutils';
 import * as stats from '../helpers/statcalculator';
-import {isUndefined} from 'util';
 
 export class ItemListing {
 
@@ -33,18 +32,23 @@ export class ItemListing {
   getSalePrice() {
     try {
       const salePrice = this.item.sellingStatus[0].currentPrice[0].__value__;
-      return Number(salePrice).toFixed(2);
+      return Number(salePrice);
     } catch (err) {
-      return Number(0).toFixed(2);
+      return 0;
     }
   }
 
   getShipPrice() {
     try {
       const shipPrice = this.item.shippingInfo[0].shippingServiceCost[0].__value__;
-      return Number(shipPrice).toFixed(2);
+      return Number(shipPrice);
     } catch (err) {
-      return Number(0).toFixed(2);
+      return 0;
     }
   }
+
+  getTotalPrice() {
+    return this.getSalePrice() + this.getShipPrice();
+  }
+
 }

@@ -18,12 +18,19 @@
       <!--&lt;!&ndash;Title&ndash;&gt;-->
       <td> {{ item.getTitle() }}</td>
       <!--Sale price-->
-      <td> ${{ item.getSalePrice() }} </td>
+      <td> ${{ item.getSalePrice().toFixed(2) }} </td>
       <!--Ship price-->
-      <td> ${{ item.getShipPrice() }} </td>
-      <!--&lt;!&ndash;&lt;!&ndash;Total price&ndash;&gt;&ndash;&gt;-->
-      <!--&lt;!&ndash;<td> {{ getTotalPrice(item) }} </td>&ndash;&gt;-->
-    <!--</tr>-->
+      <td> ${{ item.getShipPrice().toFixed(2) }} </td>
+      <!--Total price-->
+      <td> ${{ item.getTotalPrice().toFixed(2) }} </td>
+      <!--Selling status-->
+      <td [ngClass]="{
+        'sell-status-green' : item.getSellingState() === 'EndedWithSales',
+        'sell-status-red' : item.getSellingState() !== 'EndedWithSales'
+      }"> {{
+        item.getSellingState() === 'EndedWithSales' ? 'Yes' : 'No'
+        }} </td>
+    </tr>
 
   </table>
 </div>
