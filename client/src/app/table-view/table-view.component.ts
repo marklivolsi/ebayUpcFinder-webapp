@@ -27,14 +27,16 @@ export class TableViewComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router) { }
 
   async fetchListings() {
-    await this.dataService.fetchItemListings();
+    // await this.dataService.fetchItemListings();
     // handle empty / errors
     this.items = this.dataService.getItemListings();
     console.log(this.items);
   }
 
   ngOnInit() {
-    this.fetchListings();
+    // this.fetchListings();
+    console.log(this.columnNames);
+    console.log('UPC is: ' + this.dataService.getUpc());
   }
 
 }

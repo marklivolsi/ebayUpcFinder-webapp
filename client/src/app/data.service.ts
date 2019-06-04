@@ -6,9 +6,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class DataService {
   private serverUrl = 'http://localhost:3000';
-  private itemListings: any;
+  private itemListings;
   private upc: string;
-  showTable = false;
 
   getUpc(): string {
     return this.upc;
@@ -21,15 +20,16 @@ export class DataService {
   async fetchItemListings() {
     const url = this.serverUrl + '/upc/' + this.upc;
     console.log('Fetching: ' + url);
-    await this.http.get(url).toPromise().then(res => this.itemListings = res);
-    console.log(this.itemListings);
+    await this.http.get<any>(url).toPromise().then(res => this.itemListings = res);
+    console.log('Itemlistings: ' + this.itemListings);
   }
 
   getItemListings() {
     return this.itemListings;
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
 
   // async getItemListings(upc: string) {

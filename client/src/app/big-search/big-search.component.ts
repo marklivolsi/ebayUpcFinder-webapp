@@ -13,7 +13,8 @@ export class BigSearchComponent implements OnInit {
 
   onEnter(url, upc) {
     this.dataService.setUpc((document.getElementById('searchbar') as HTMLInputElement).value);
-    this.dataService.showTable = true;
+    console.log(this.dataService.getUpc());
+    this.dataService.fetchItemListings();
     this.router.navigate([url, upc]);
   }
 
@@ -21,5 +22,3 @@ export class BigSearchComponent implements OnInit {
   }
 
 }
-;
-;

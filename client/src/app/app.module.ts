@@ -20,10 +20,6 @@ const appRoutes: Routes = [
     component: ItemDetailComponent
   }, {
     path: '',
-    component: AppComponent,
-    pathMatch: 'full'
-  }, {
-    path: '**',
     component: PageNotFoundComponent
   }
 ];
@@ -40,7 +36,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     AngularFontAwesomeModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {enableTracing: true})
   ],
   providers: [],
   bootstrap: [AppComponent]
