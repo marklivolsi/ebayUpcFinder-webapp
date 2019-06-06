@@ -27,6 +27,13 @@ export class TableViewComponent implements OnInit {
 
   constructor(private dataService: DataService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
+  ngOnInit() {
+    this.activatedRoute.params.subscribe( (res) => {
+      this.dataService.setUpc(res.upc);
+      this.fetchListings();
+    });
+  }
+
   async fetchListings() {
     await this.dataService.fetchItemListings();
     this.items = [];
@@ -35,13 +42,6 @@ export class TableViewComponent implements OnInit {
     }
     console.log(`Fetched item listings for UPC code ${this.dataService.getUpc()}: `);
     console.log(this.items);
-  }
-
-  ngOnInit() {
-    this.activatedRoute.params.subscribe( (res) => {
-      this.dataService.setUpc(res.upc);
-      this.fetchListings();
-    });
   }
 
   private sortTable(columnIndex: number, sortDirection: string) {
