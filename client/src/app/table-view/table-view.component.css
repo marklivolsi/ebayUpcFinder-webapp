@@ -35,3 +35,37 @@ tr:hover {
   color: green;
   font-weight: bold;
 }
+
+fa {
+  padding-left: 5px;
+  color: lightgray;
+}
+
+fa:hover {
+  color: white;
+}
+
+.sort-up {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
+
+.sort-down {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.sort-icons {
+  display: inline-block;
+  height: 100%;
+  padding-left: 5px;
+}
+
+.table-header-text {
+  position: relative;
+  bottom: 5px;
+}

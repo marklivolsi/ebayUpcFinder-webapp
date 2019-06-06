@@ -1,28 +1,46 @@
 <div class="table-responsive">
-  <table class="table table-sm">
+  <table class="table table-sm" id="itemListingTable">
     <thead class="thead-dark">
     <tr>
-      <th *ngFor="let col of columnNames">
-        {{col}}
+
+      <th *ngFor="let col of columnNames; let colIndex = index;">
+
+        <div class="table-header-cell">
+          <span class="table-header-text">{{col}}</span>
+
+          <div class="sort-icons">
+
+            <div class="sort-up" (click)="sortTable(colIndex, 'up')">
+              <fa name="angle-up"></fa>
+            </div>
+            <div class="sort-down" (click)="sortTable(colIndex, 'down')">
+              <fa name="angle-down"></fa>
+            </div>
+
+          </div>
+
+        </div>
+
       </th>
+
     </tr>
     </thead>
     <tr *ngFor="let item of items; let i = index;" [ngClass]="{
         'green' : item.getSellingState() === 'EndedWithSales',
-        'red' : item.getSellingState() === 'EndedWithoutSales'
+        'red' : item.getSellingState() !== 'EndedWithSales'
       }">
       <!--Item number-->
       <td>{{ i + 1 }}</td>
       <!--Item Id-->
-      <td> {{ item.getItemId() }}  </td>
-      <!--&lt;!&ndash;Title&ndash;&gt;-->
-      <td> {{ item.getTitle() }}</td>
+      <td>{{ item.getItemId() }}  </td>
+      <!--Title-->
+      <td>{{ item.getTitle() }}</td>
       <!--Sale price-->
-      <td> ${{ item.getSalePrice().toFixed(2) }} </td>
+      <td>${{ item.getSalePrice().toFixed(2) }} </td>
       <!--Ship price-->
-      <td> ${{ item.getShipPrice().toFixed(2) }} </td>
+      <td>${{ item.getShipPrice().toFixed(2) }} </td>
       <!--Total price-->
-      <td> ${{ item.getTotalPrice().toFixed(2) }} </td>
+      <td>${{ item.getTotalPrice().toFixed(2) }} </td>
       <!--Selling status-->
       <td [ngClass]="{
         'sell-status-green' : item.getSellingState() === 'EndedWithSales',
@@ -34,4 +52,3 @@
 
   </table>
 </div>
-<!--<p>table view works!</p>-->

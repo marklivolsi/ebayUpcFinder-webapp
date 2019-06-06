@@ -20,8 +20,6 @@ export class TableViewComponent implements OnInit {
     'Ship Price',
     'Total',
     'Sold',
-    '',
-    ''
     // 'Start Time',
     // 'End Time'
   ];
@@ -46,30 +44,45 @@ export class TableViewComponent implements OnInit {
     });
   }
 
-  // getSellingState(item: any): string {
-  //   return stringutils.formatSaleStatus(item.sellingStatus[0].sellingState[0]);
-  // }
-  //
-  // getItemId(item: any): string {
-  //   return item.itemId[0];
-  // }
-  //
-  // getTitle(item: any): string {
-  //   return item.title[0];
-  // }
-  //
-  // getSalePrice(item: any): string {
-  //   return stringutils.formatStringAsCurrency(item.sellingStatus[0].currentPrice[0].__value__);
-  // }
-  //
-  // getShipPrice(item: any): string {
-  //   return stringutils.formatStringAsCurrency(item.shippingInfo[0].shippingServiceCost[0].__value__);
-  // }
-  //
-  // getTotalPrice(item: any): string {
-  //   return stringutils.formatNumberAsCurrency(stats.getTotalPrice(item));
-  // }
+  private sortTable(columnIndex: number, sortDirection: string) {
+    const table = document.getElementById('itemListingTable') as HTMLTableElement;
+    let loop = true;
+    while (loop) {
+      let didSort = false;
+      let thisRow: any;
+      let nextRow: any;
+      const rows = table.rows;
+      for (let i = 1; i < rows.length - 1; i++) {
+        thisRow = rows[i].getElementsByTagName('td')[columnIndex].innerHTML.toLowerCase();
+        nextRow = rows[i + 1].getElementsByTagName('td')[columnIndex].innerHTML.toLowerCase();
+        if (!isNaN(this.stripCurrencyForSort(thisRow))) {
+          thisRow = Number(this.stripCurrencyForSort(thisRow));
+          nextRow = Number(this.stripCurrencyForSort(nextRow));
+        }
+        if (sortDirection === 'up') {
+          if (thisRow > nextRow) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            didSort = true;
+          }
+        } else if (sortDirection === 'down') {
+          if (thisRow < nextRow) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            didSort = true;
+          }
+        }
+      }
+      if (!didSort) {
+        loop = false;
+      }
+    }
+  }
 
-
+  private stripCurrencyForSort(value: string): any {
+    if (value.charAt(0) === '$') {
+      return value.substring(1, value.length - 1);
+    } else {
+      return value;
+    }
+  }
 
 }

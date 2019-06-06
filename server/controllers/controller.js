@@ -12,7 +12,7 @@ exports.getItemList = async function (req, res) {
         res.send(listings);
     }
     else {
-        res.send('INVALID UPC');
+        res.status(404).send('INVALID UPC');
     }
 };
 
