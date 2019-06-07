@@ -1,3 +1,44 @@
+<div class="card-deck">
+  <div class="m-4"></div>
+  <div class="card m-auto" id="meanCard">
+    <div class="card-header">
+      Mean price
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <!--<p class="price-stat-label">Mean price:</p>-->
+        <span class="price-statistic" id="mean">${{getMeanPrice().toFixed(2)}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="m-4"></div>
+  <div class="card m-auto" id="medianCard">
+    <div class="card-header">
+      Median price
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <!--<p class="price-stat-label">Mean price:</p>-->
+        <span class="price-statistic" id="median">${{getMedianPrice().toFixed(2)}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="m-4"></div>
+  <div class="card m-auto" id="rangeCard">
+    <div class="card-header">
+      Price range
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <!--<p class="price-stat-label">Mean price:</p>-->
+        <span class="price-statistic min-price" style="color: var(--red5)">${{getMinPrice().toFixed(2)}}</span>
+        <span class="price-statistic" style="color: var(--gray9);">  -  </span>
+        <span class="price-statistic max-price" style="color: var(--cyan5)">${{getMaxPrice().toFixed(2)}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="m-4"></div>
+
 <div class="table-responsive">
   <table class="table table-sm" id="itemListingTable">
     <thead class="thead-dark">

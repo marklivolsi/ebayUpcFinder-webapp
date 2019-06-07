@@ -51,4 +51,5 @@ export class ItemListing {
     return this.getSalePrice() + this.getShipPrice();
   }
 
+
 }

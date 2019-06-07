@@ -10,6 +10,7 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {TableViewComponent} from './table-view/table-view.component';
 import { BigSearchComponent } from './big-search/big-search.component';
+import { StatCardComponent } from './stat-card/stat-card.component';
 
 const appRoutes: Routes = [
   {
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     TableViewComponent,
     ItemDetailComponent,
     PageNotFoundComponent,
-    BigSearchComponent
+    BigSearchComponent,
+    StatCardComponent
   ],
   imports: [
     BrowserModule,

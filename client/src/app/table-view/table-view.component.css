@@ -3,36 +3,46 @@ table {
   /*font-family: "Times New Roman", Times, serif;*/
   font-family: Helvetica, sans-serif;
   margin-top: 30px;
+  /*margin-left: 10px;*/
+  /*margin-right: 20px;*/
+  /*margin-right: 10px;*/
 }
 
 td, th {
-  padding: 10px;
+  padding: 10px 30px;
 }
 
 th {
   font-weight: lighter;
+  background-color: var(--gray9) !important;
 }
 
 tr:hover {
-  background-color: #F7F9F9;
+  /*background-color: #F7F9F9;*/
   cursor: pointer;
+  background-color: white;
 }
 
 .green {
-  background-color: #eeffed;
+  /*background-color: #ccfff0;*/
+  /*background-color: var(--teal0);*/
+  color: var(--gray9);
+  background-color: var(--cyan1);
 }
 
 .red {
-  background-color: #ffeded;
+  /*background-color: #ffccd8;*/
+  background-color: var(--red1);
+  color: var(--gray9);
 }
 
 .sell-status-red {
-  color: red;
+  color: var(--red5);
   font-weight: bold;
 }
 
 .sell-status-green {
-  color: green;
+  color: var(--cyan5);
   font-weight: bold;
 }
 
@@ -68,4 +78,64 @@ fa:hover {
 .table-header-text {
   position: relative;
   bottom: 5px;
+}
+
+.card-deck {
+  margin-top: 50px;
+}
+
+.card {
+  width: 18rem;
+  /*border: none;*/
+}
+
+.card-header {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+}
+
+.list-group {
+  text-align: center;
+
+}
+
+.price-statistic {
+  font-family: 'Lato', sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
+
+.min-price {
+  color: red;
+}
+
+.max-price {
+  color: green;
+}
+
+#mean {
+  color: var(--pink5);
+}
+
+#median {
+  color: var(--blue5);
+}
+
+#meanCard {
+  background-color: var(--pink5);
+  color: white;
+  border-color: var(--pink5) !important;
+}
+
+#medianCard {
+  background-color: var(--blue5);
+  color: white;
+  border-color: var(--blue5);
+}
+
+#rangeCard {
+  background-color: var(--gray9);
+  color: white;
+  border-color: var(--gray9);
 }
