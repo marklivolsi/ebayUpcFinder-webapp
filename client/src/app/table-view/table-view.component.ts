@@ -22,7 +22,10 @@ export class TableViewComponent implements OnInit {
     'Sale Price',
     'Ship Price',
     'Total',
+    'Condition',
+    'Buy It Now',
     'Sold',
+    'Category Name'
     // 'Start Time',
     // 'End Time'
   ];

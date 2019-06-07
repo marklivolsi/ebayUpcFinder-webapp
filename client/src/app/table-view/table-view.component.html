@@ -83,13 +83,16 @@
       <td>${{ item.getShipPrice().toFixed(2) }} </td>
       <!--Total price-->
       <td>${{ item.getTotalPrice().toFixed(2) }} </td>
+      <!--Condition-->
+      <td style="white-space: nowrap">{{ item.getConditionDisplayName() }}</td>
+      <!--Buy It Now-->
+      <td *ngIf="item.isBuyItNowAvailable() === false"><fa name="times" class="times-icon"></fa></td>
+      <td *ngIf="item.isBuyItNowAvailable() === true"><fa name="check" class="check-icon"></fa></td>
       <!--Selling status-->
-      <td [ngClass]="{
-        'sell-status-green' : item.getSellingState() === 'EndedWithSales',
-        'sell-status-red' : item.getSellingState() !== 'EndedWithSales'
-      }"> {{
-        item.getSellingState() === 'EndedWithSales' ? 'Yes' : 'No'
-        }} </td>
+      <td *ngIf="item.getSellingState() === 'EndedWithoutSales'"><fa name="times" class="times-icon"></fa></td>
+      <td *ngIf="item.getSellingState() === 'EndedWithSales'"><fa name="check" class="check-icon"></fa></td>
+      <!--Category-->
+      <td>{{ item.getCategoryName() }}</td>
     </tr>
 
   </table>

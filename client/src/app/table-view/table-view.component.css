@@ -11,11 +11,13 @@ table {
 
 td, th {
   padding: 10px 30px;
+  vertical-align: middle;
 }
 
 th {
   font-weight: lighter;
   background-color: var(--indigo8) !important;
+  white-space: nowrap;
 }
 
 tr:hover {
@@ -140,3 +142,22 @@ fa:hover {
   color: white;
   border-color: var(--gray8);
 }
+
+.times-icon {
+  color: var(--pink6);
+  font-size: 2em;
+}
+
+.times-icon:hover {
+  color: var(--pink6);
+}
+
+.check-icon {
+  color: var(--teal7);
+  font-size: 2em;
+}
+
+.check-icon:hover {
+  color: var(--teal7);
+}
+
