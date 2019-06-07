@@ -10,6 +10,10 @@ fa {
 }
 
 .navbar-light {
-  background-color: var(--gray9) !important;
+  background-color: var(--indigo8) !important;
+  /*width: 100%;*/
 }
 
+.navbar {
+  width: 100%;
+}

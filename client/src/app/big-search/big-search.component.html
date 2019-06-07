@@ -4,11 +4,11 @@
       (keyup.enter)="onEnter('upc/', bar.value)"
       id = "searchbar"
       type="text"
-      class="form-control"
+      class="form-control shadow-sm"
       placeholder="enter UPC code"
       onfocus="this.placeholder=''"
       onblur="this.placeholder='enter UPC code'"/>
-    <div class="input-group-append">
+    <div class="input-group-append shadow-sm">
       <button type="submit" class="btn btn-outline-secondary" (click)="onEnter('upc/', bar.value)">
         <fa name="search"></fa>
       </button>

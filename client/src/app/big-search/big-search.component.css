@@ -9,11 +9,12 @@
   margin: auto;
   font-family: 'Lato', sans-serif;
   height: 60px;
-  border-color: var(--gray9);
+  border-color: var(--indigo8);
+  color: var(--indigo8)
 }
 
 ::placeholder {
-  color: var(--gray9);
+  color: var(--indigo8);
 }
 
 #searchbar:focus {
@@ -22,9 +23,9 @@
 }
 
 button {
-  border-color: var(--gray9);
+  border-color: var(--indigo8);
 }
 
 fa {
-  color: var(--gray9);
+  color: var(--indigo8);
 }

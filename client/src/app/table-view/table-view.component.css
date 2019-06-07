@@ -1,8 +1,9 @@
 table {
-  font-size: 0.85em;
+  font-size: 0.75em;
   /*font-family: "Times New Roman", Times, serif;*/
   font-family: Helvetica, sans-serif;
   margin-top: 30px;
+  width: 100%;
   /*margin-left: 10px;*/
   /*margin-right: 20px;*/
   /*margin-right: 10px;*/
@@ -14,7 +15,7 @@ td, th {
 
 th {
   font-weight: lighter;
-  background-color: var(--gray9) !important;
+  background-color: var(--indigo8) !important;
 }
 
 tr:hover {
@@ -27,22 +28,22 @@ tr:hover {
   /*background-color: #ccfff0;*/
   /*background-color: var(--teal0);*/
   color: var(--gray9);
-  background-color: var(--cyan1);
+  background-color: var(--teal1);
 }
 
 .red {
   /*background-color: #ffccd8;*/
-  background-color: var(--red1);
+  background-color: var(--pink1);
   color: var(--gray9);
 }
 
 .sell-status-red {
-  color: var(--red5);
+  color: var(--pink5);
   font-weight: bold;
 }
 
 .sell-status-green {
-  color: var(--cyan5);
+  color: var(--teal7);
   font-weight: bold;
 }
 
@@ -70,7 +71,7 @@ fa:hover {
 }
 
 .sort-icons {
-  display: inline-block;
+  display: inline;
   height: 100%;
   padding-left: 5px;
 }
@@ -135,7 +136,7 @@ fa:hover {
 }
 
 #rangeCard {
-  background-color: var(--gray9);
+  background-color: var(--gray8);
   color: white;
-  border-color: var(--gray9);
+  border-color: var(--gray8);
 }
