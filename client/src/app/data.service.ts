@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { ItemListing } from './models/ItemListing';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   private serverUrl = 'http://localhost:3000';
-  private itemListings;
+  private itemListings: ItemListing[];
   private upc: string;
 
   constructor(private http: HttpClient) {
@@ -16,7 +17,7 @@ export class DataService {
     return this.upc;
   }
 
-  setUpc(upc: string) {
+  setUpc(upc: string): void {
     this.upc = upc;
   }
 
@@ -24,21 +25,19 @@ export class DataService {
     const url = this.serverUrl + '/upc/' + this.upc;
     console.log('Fetching: ' + url);
     try {
-      await this.http.get<any>(url).toPromise().then(res => {
-        if (res === null) {
-          throw new Error('ERROR: Null response. Check the provided UPC code is valid.');
-        } else {
-          this.itemListings = res;
-        }
-      });
+      this.itemListings = await this.http.get<ItemListing[]>(url).toPromise();
+      if (this.itemListings === null) {
+        throw new Error('ERROR: Null response. Check the provided UPC code is valid.');
+      }
+      console.log('Listings: ' + this.itemListings);
     } catch (err) {
       console.error(err);
       console.log('Will route to error handler...');
-      // route to appropriate component
+      // TODO: route to appropriate component
     }
   }
 
-  getItemListings() {
+  getItemListings(): ItemListing[] {
     return this.itemListings;
   }
 }

@@ -1,12 +1,7 @@
 table {
   font-size: 0.75em;
-  /*font-family: "Times New Roman", Times, serif;*/
   font-family: Helvetica, sans-serif;
   margin-top: 30px;
-  width: 100%;
-  /*margin-left: 10px;*/
-  /*margin-right: 20px;*/
-  /*margin-right: 10px;*/
 }
 
 td, th {
@@ -21,20 +16,16 @@ th {
 }
 
 tr:hover {
-  /*background-color: #F7F9F9;*/
   cursor: pointer;
   background-color: white;
 }
 
 .green {
-  /*background-color: #ccfff0;*/
-  /*background-color: var(--teal0);*/
   color: var(--gray9);
   background-color: var(--teal1);
 }
 
 .red {
-  /*background-color: #ffccd8;*/
   background-color: var(--pink1);
   color: var(--gray9);
 }
@@ -89,7 +80,6 @@ fa:hover {
 
 .card {
   width: 18rem;
-  /*border: none;*/
 }
 
 .card-header {
@@ -144,12 +134,12 @@ fa:hover {
 }
 
 .times-icon {
-  color: var(--pink6);
+  color: var(--pink5);
   font-size: 2em;
 }
 
 .times-icon:hover {
-  color: var(--pink6);
+  color: var(--pink5);
 }
 
 .check-icon {
