@@ -99,14 +99,6 @@ fa:hover {
   text-align: center;
 }
 
-.min-price {
-  color: red;
-}
-
-.max-price {
-  color: green;
-}
-
 #mean {
   color: var(--pink5);
 }

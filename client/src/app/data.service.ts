@@ -22,7 +22,7 @@ export class DataService {
   }
 
   async fetchItemListings() {
-    const url = this.serverUrl + '/upc/' + this.upc;
+    const url = this.serverUrl + '/upc/' + this.upc;  // TODO: Update base URL in config
     console.log('Fetching: ' + url);
     try {
       this.itemListings = await this.http.get<ItemListing[]>(url).toPromise();

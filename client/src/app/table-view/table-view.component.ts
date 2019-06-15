@@ -1,11 +1,11 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ItemListing } from '../models/ItemListing';
 import { sortTable } from '../helpers/tablesorter';
-import {Chart} from 'chart.js';
-import {getMeanTotalPrice, getMedianTotalPrice} from '../helpers/statcalculator';
+import { Chart } from 'chart.js';
+import { getMeanTotalPrice, getMedianTotalPrice } from '../helpers/statcalculator';
 
 @Component({
   selector: 'app-table-view',
@@ -14,7 +14,7 @@ import {getMeanTotalPrice, getMedianTotalPrice} from '../helpers/statcalculator'
 })
 export class TableViewComponent implements OnInit {
 
-  items: any[];
+  items: ItemListing[];
   columnNames = [
     '#',
     'ID',
@@ -29,10 +29,6 @@ export class TableViewComponent implements OnInit {
     // 'Start Time',
     // 'End Time'
   ];
-
-  @ViewChild('meanChart') chart: ElementRef;
-
-
 
   constructor(private dataService: DataService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -85,22 +81,5 @@ export class TableViewComponent implements OnInit {
     }
     return max;
   }
-
-  // ngAfterViewInit() {
-  //   this.createMeanChart();
-  // }
-
-  // createMeanChart() {
-  //   const ctx = this.chart.nativeElement.getContext('2d');
-  //   const data = [];
-  //   for (const item of this.items) {
-  //     data.push(item.getTotalPrice());
-  //   }
-  //   const meanChart = new Chart(ctx, {
-  //     type: 'line',
-  //     data,
-  //     options
-  //   });
-  // }
 
 }

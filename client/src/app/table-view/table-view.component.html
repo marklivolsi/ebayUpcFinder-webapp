@@ -6,7 +6,6 @@
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
-        <!--<p class="price-stat-label">Mean price:</p>-->
         <span class="price-statistic" id="mean">${{getMeanPrice().toFixed(2)}}</span>
       </li>
     </ul>
@@ -18,7 +17,6 @@
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
-        <!--<p class="price-stat-label">Mean price:</p>-->
         <span class="price-statistic" id="median">${{getMedianPrice().toFixed(2)}}</span>
       </li>
     </ul>
@@ -31,9 +29,9 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         <!--<p class="price-stat-label">Mean price:</p>-->
-        <span class="price-statistic min-price" style="color: var(--pink5)">${{getMinPrice().toFixed(2)}}</span>
+        <span class="price-statistic" style="color: var(--pink5)">${{getMinPrice().toFixed(2)}}</span>
         <span class="price-statistic" style="color: var(--gray8);">  -  </span>
-        <span class="price-statistic max-price" style="color: var(--teal7)">${{getMaxPrice().toFixed(2)}}</span>
+        <span class="price-statistic" style="color: var(--teal7)">${{getMaxPrice().toFixed(2)}}</span>
       </li>
     </ul>
   </div>
